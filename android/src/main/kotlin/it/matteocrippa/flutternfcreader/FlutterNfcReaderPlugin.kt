@@ -226,7 +226,7 @@ class FlutterNfcReaderPlugin(registrar: Registrar) : MethodCallHandler, EventCha
             ndef?.connect()
             val ndefMessage = ndef?.ndefMessage ?: ndef?.cachedNdefMessage
             val message = bytesToHexString(ndef?.ndefMessage
-                ?.toByteArray())"
+                ?.toByteArray()) ?: ""
             //val id = tag?.id?.toString(Charset.forName("ISO-8859-1")) ?: ""
             val id = bytesToHexString(tag?.id) ?: ""
             ndef?.close()
